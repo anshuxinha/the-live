@@ -285,7 +285,7 @@ const main = () => {
   const imgFile = document.getElementById("imgfile");
   const image = new Image();
   // const file = imgFile.files[0];
-  const fileReader = new FileReader();
+  // const fileReader = new FileReader();
 
   // Whenever file & image is loaded procced to extract the information from the image
   fileReader.onload = () => {
