@@ -2,8 +2,8 @@ const buildPalette = (colorsList) => {
   const paletteContainer = document.getElementById("palette");
   const complementaryContainer = document.getElementById("complementary");
   // reset the HTML in case you load various images
-  paletteContainer.innerHTML = "";
-  complementaryContainer.innerHTML = "";
+  /* paletteContainer.innerHTML = "";
+  complementaryContainer.innerHTML = ""; */
 
   const orderedByColor = orderByLuminance(colorsList);
   const hslColors = convertRGBtoHSL(orderedByColor);
