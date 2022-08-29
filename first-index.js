@@ -321,7 +321,7 @@ const main = () => {
     image.src = fileReader.result;
   };
 
-  fileReader.readAsDataURL(file);
+  // fileReader.readAsDataURL(file);
 
   function pollDOM() {
     const el = document.querySelector("#palette div");
