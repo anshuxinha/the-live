@@ -1,29 +1,29 @@
-const buildPalette = (colorsList) => {
-  const paletteContainer = document.getElementById("palette");
-  const complementaryContainer = document.getElementById("complementary");
-  // reset the HTML in case you load various images
-  /* paletteContainer.innerHTML = "";
-  complementaryContainer.innerHTML = ""; */
+// const buildPalette = (colorsList) => {
+//   const paletteContainer = document.getElementById("palette");
+//   const complementaryContainer = document.getElementById("complementary");
+//   // reset the HTML in case you load various images
+//   paletteContainer.innerHTML = "";
+//   complementaryContainer.innerHTML = "";
 
-  const orderedByColor = orderByLuminance(colorsList);
-  const hslColors = convertRGBtoHSL(orderedByColor);
+//   const orderedByColor = orderByLuminance(colorsList);
+//   const hslColors = convertRGBtoHSL(orderedByColor);
 
-  for (let i = 0; i < orderedByColor.length; i++) {
-    const hexColor = rgbToHex(orderedByColor[i]);
+//   for (let i = 0; i < orderedByColor.length; i++) {
+//     const hexColor = rgbToHex(orderedByColor[i]);
 
-    const hexColorComplementary = hslToHex(hslColors[i]);
+//     const hexColorComplementary = hslToHex(hslColors[i]);
 
-    if (i > 0) {
-      const difference = calculateColorDifference(
-        orderedByColor[i],
-        orderedByColor[i - 1]
-      );
+//     if (i > 0) {
+//       const difference = calculateColorDifference(
+//         orderedByColor[i],
+//         orderedByColor[i - 1]
+//       );
 
-      // if the distance is less than 120 we ommit that color
-      if (difference < 120) {
-        continue;
-      }
-    }
+//       // if the distance is less than 120 we ommit that color
+//       if (difference < 120) {
+//         continue;
+//       }
+//     }
 
     // create the div and text elements for both colors & append it to the document
     const colorElement = document.createElement("div");
@@ -284,8 +284,8 @@ const quantization = (rgbValues, depth) => {
 const main = () => {
   const imgFile = document.getElementById("imgfile");
   const image = new Image();
-  // const file = imgFile.files[0];
-  // const fileReader = new FileReader();
+  const file = imgFile.files[0];
+  const fileReader = new FileReader();
 
   // Whenever file & image is loaded procced to extract the information from the image
   fileReader.onload = () => {
@@ -321,7 +321,7 @@ const main = () => {
     image.src = fileReader.result;
   };
 
-  // fileReader.readAsDataURL(file);
+  fileReader.readAsDataURL(file);
 
   function pollDOM() {
     const el = document.querySelector("#palette div");
