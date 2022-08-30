@@ -318,22 +318,10 @@ const main = () => {
       // Create the HTML structure to show the color palette
       buildPalette(quantColors);
     };
-    image.src = fileReader.result;
+    // image.src = fileReader.result;
   };
 
   fileReader.readAsDataURL(file);
-
-  function pollDOM() {
-    const el = document.querySelector("#palette div");
-
-    if (el.length) {
-      document.getElementById("color-values").textContent =
-        document.querySelector("#palette div").textContent;
-    } else {
-      setTimeout(pollDOM, 300); // try again in 300 milliseconds
-    }
-  }
-  pollDOM();
 };
 
 main();
